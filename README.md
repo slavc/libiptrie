@@ -7,6 +7,10 @@ the maximum length of the key. So for an IPv4 address, it will take a maximum
 of 32 steps to lookup an IP address, regardless of how many IP
 addresses/prefixes you already have in the Trie.
 
+Furthermore, Trie allows to do prefix lookups or walks, e.g. you can assign a
+value to an IP address prefix and to a concrete IP address from that prefix and
+lookup both in O(k) time:
+
 ```c
 // Assign ptr1 to IP prefix "0.0.0.0/0"
 inet_pton(AF_INET, "0.0.0.0", &addr);
